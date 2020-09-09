@@ -1,1 +1,1 @@
-FROM mcr.microsoft.com/mssql/server as base 
+FROM mcr.microsoft.com/mssql/server:2017-latest as base 
