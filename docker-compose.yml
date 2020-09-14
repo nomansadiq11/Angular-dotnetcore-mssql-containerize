@@ -1,0 +1,10 @@
+version: "2"
+services:
+  db:
+    container_name: mssql
+    build:
+      context: ./DB/
+    # volumes:
+    #   - ./WebServer/app/index.html:/usr/share/nginx/html/index.html
+    environment:
+      PORT: "1444:1433"
