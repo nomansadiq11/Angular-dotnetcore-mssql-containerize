@@ -8,3 +8,7 @@ services:
     #   - ./WebServer/app/index.html:/usr/share/nginx/html/index.html
     environment:
       PORT: "1444:1433"
+  api:
+    container_name: qmsapi
+    build:
+      context: ./API/
