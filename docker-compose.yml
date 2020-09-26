@@ -7,8 +7,7 @@ services:
     # volumes:
     #   - ./WebServer/app/index.html:/usr/share/nginx/html/index.html
     environment:
-      PORT: "1444:1433"
-  api:
-    container_name: qmsapi
-    build:
-      context: ./API/
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "yourStrong(!)Password"
+    ports:
+      -  "1444:1433"
