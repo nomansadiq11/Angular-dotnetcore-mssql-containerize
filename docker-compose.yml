@@ -1,19 +1,25 @@
 version: "2"
 services:
-  db:
-    container_name: mssql
+  # db:
+  #   container_name: mssql
+  #   build:
+  #     context: ./DB/
+  #   # volumes:
+  #   #   - ./WebServer/app/index.html:/usr/share/nginx/html/index.html
+  #   environment:
+  #     ACCEPT_EULA: "Y"
+  #     SA_PASSWORD: "yourStrong(!)Password"
+  #   ports:
+  #     -  "1444:1433"
+  # api:
+  #     container_name: api
+  #     build:
+  #       context: ./API/API/
+  #     ports:
+  #       - 3002:80
+  web:
+    container_name: web
     build:
-      context: ./DB/
-    # volumes:
-    #   - ./WebServer/app/index.html:/usr/share/nginx/html/index.html
-    environment:
-      ACCEPT_EULA: "Y"
-      SA_PASSWORD: "yourStrong(!)Password"
+      context: ./Web/
     ports:
-      -  "1444:1433"
-  api:
-      container_name: api
-      build:
-        context: ./API/API/
-      ports:
-        - 3002:80
+      - 4200:4200
