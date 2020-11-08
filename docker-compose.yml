@@ -11,3 +11,19 @@ services:
       SA_PASSWORD: "yourStrong(!)Password"
     ports:
       -  "1444:1433"
+  api:
+      container_name: api
+      build:
+        context: ./API/API/
+      ports:
+        - 3002:80
+      depends_on:
+        - db
+  web:
+    container_name: web
+    build:
+      context: ./Web/
+    ports:
+      - 4200:4200
+    depends_on:
+      - api
